@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To do list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+    <style>
+      .font{
+        font-family: 'Source Serif Pro', serif;
+        font-size: 60px;
+        margin-top: 6vh;
+      }
+      .backimg{
+        position: fixed;
+        z-index: -1;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      </style>
+  </head>
+  <body >
+    <!-- class="bg-dark text-light" -->
+    
+    <img src="book1.webp" class="backimg" alt="">
+
+    <!-- navbar -->
+
+
+    <nav class="navbar navbar-expand-lg bg navbar-dark" style="background-color: #525252;">
+        <div class="container-fluid">
+          <h3><a class="navbar-brand" href="#">TO-DO LIST</a></h3>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="todoList.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="clock.html">Local Time Zone</a>
+              </li>
+              <li class="nav-item dropdown disabled">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Topics
+                </a>
+                <ul class="dropdown-menu" style="background-color: #525252;">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+<div>
+  <div class="container my-4" style="margin: auto">
+
+        <h2 class="text-center font">✦ Keep Your Track Here ✦</h2>
+        
+        <!-- forms -->
+        
+
+    <div class="mb-3" style="margin: 0 10vw;">
+      <label for="text" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" aria-describedby="emailHelp" style="background-color: #e9e5e5; border: 2px solid black;">
+      <div id="emailHelp" class="form-text">Add an item to a list.</div>
+    </div>
+    <div class="mb-3" style="margin: 0 10vw;">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" rows="5" style="background-color: #e9e5e5; border: 2px solid black;"></textarea>
+      <button type="submit" id="add" class="btn btn-primary my-4">Add to list</button>
+    </div>
+    
+    <!-- collapse -->
+    
+    <div id="item" class="" style="margin: 0 10vw;">
+      <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Click Me
+      </a>
+      <div class="form-text">Your Items Saved Here Have a Look.</div>
+      <div class="collapse" id="collapseExample" style="background-color: #e9e5e5;">
+        <div class="card card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">SNo.</th>
+                <th scope="col">Item Title</th>
+                <th scope="col">Item Description</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <th scope="row">1</th>
+                <td>Get some coffee</td>
+                <td>You need coffee as you are coder</td>
+                <td><button class="btn btn-sm btn-primary">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <button  id="clear" class="btn btn-danger my-4 mx-2" onclick="clearStorage()">Clear list</button>
+  </div>
+</div>
+</div>
+
+
+<!-- for a separate table -->
+
+<!-- <div id="items" class="my-4">
+    <h2>Your Items</h2> -->
+
+    <!-- table -->
+
+    <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SNo.</th>
+            <th scope="col">Item Title</th>
+            <th scope="col">Item Description</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <th scope="row">1</th>
+            <td>Get some coffee</td>
+            <td>You need coffee as you are coder</td>
+            <td><button class="btn btn-sm btn-primary">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</div> -->
+
+</div>  
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script>
+        function getAndUpdate(){
+            console.log('Updating List....')
+            tit = document.getElementById('title').value;
+            desc = document.getElementById('description').value;
+            if(localStorage.getItem('itemsJson') == null){
+                itemJsonArray = [];
+                itemJsonArray.push([tit, desc])
+                abc = JSON.stringify(itemJsonArray)
+                localStorage.setItem('itemsJson', abc)
+            }
+            else{
+                itemJsonArrayStr = localStorage.getItem('itemsJson');
+                itemJsonArray = JSON.parse(itemJsonArrayStr);
+                itemJsonArray.push([tit, desc]);
+                ab = JSON.stringify(itemJsonArray)
+                localStorage.setItem('itemsJson', ab);
+            }
+            update()
+        }
+        function update(){
+            if(localStorage.getItem('itemsJson') == null){
+                itemJsonArray = [];
+                abc = JSON.stringify(itemJsonArray)
+                localStorage.setItem('itemsJson', abc)
+            }
+            else{
+                itemJsonArrayStr = localStorage.getItem('itemsJson');
+                itemJsonArray = JSON.parse(itemJsonArrayStr);
+            }
+            
+
+            // populate the table
+            tableBody = document.getElementById('tableBody')
+            let str = ""
+            itemJsonArray.forEach((element, index) => {
+                str += `
+                <tr>
+            <th scope="row">${index + 1}</th>
+            <td>${element[0]}</td>
+            <td>${element[1]}</td>
+            <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td>
+            </tr>
+                ` 
+            });
+            tableBody.innerHTML = str;
+        }
+        add = document.getElementById("add");
+        add.addEventListener('click',getAndUpdate)
+        update()
+        function deleted(itemIndex){
+            console.log('delete', itemIndex)
+            itemJsonArrayStr = localStorage.getItem('itemsJson');
+            itemJsonArray = JSON.parse(itemJsonArrayStr);
+            // delete itemindex element from the array
+            itemJsonArray.splice(itemIndex, 1)
+            abc = JSON.stringify(itemJsonArray)
+            localStorage.setItem('itemsJson', abc)
+
+            update()
+        }
+        function clearStorage(){
+            if(confirm("Do you really want to clear?")){
+            console.log('clearing the storage')
+            localStorage.clear()
+            update()
+        }
+        }
+    </script>
+  </body>
+</html>

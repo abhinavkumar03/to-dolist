@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Time Zone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .container{
+            width: 60vw;
+            background-color: rgb(148, 148, 148);
+            border: 10px inset rgb(133, 133, 133);
+            border-radius: 8px;
+            padding: 6vh 4vw;
+          }
+          .back{
+            position: fixed;
+            z-index: -2;
+            width: 100vw;
+          }
+          </style>
+
+</head>
+<body class="bg-dark text-light">
+    <img src="img.jpg" alt="" class="back">
+
+    <nav class="navbar navbar-expand-lg bg navbar-dark" style="background-color: #525252;">
+      <div class="container-fluid">
+        <h3><a class="navbar-brand" href="#">TO-DO LIST</a></h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="todoList.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="clock.html">Local Time Zone</a>
+            </li>
+            <li class="nav-item dropdown disabled">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Topics
+              </a>
+              <ul class="dropdown-menu" style="background-color: #525252;">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+<div class="container my-4">
+
+<!-- jumbotron -->
+
+    <div class="jumbotron text-dark">
+        <h1 class="display-4">current time is: <span id="time"></span></h1>
+        <p class="lead">We have got your curretn time</p>
+            <hr class="my-4">
+            <p>Hello my name is abhinav , this site is made by me and here to show you time of different countries</p>
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Browse Time
+                </a>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    "I apologize for the inconvenience , the work is in progress get notified soon. Very soon you will able to access time from differnet location"
+                </div>
+          </div>
+     </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + ' on ' + date;
+
+        }, 1000);
+    </script>
+  </body>
+</html>
